@@ -1,4 +1,4 @@
-#!/bin/bash -e -x
+#!/bin/bash -ex
 
 bindir=$( cd -P "$( dirname "$0" )" && pwd )
 if [ -h "$0" ]; then
@@ -7,6 +7,6 @@ fi
 
 mkdir -p output
 
-pandoc -t revealjs -s -i -V theme=night --template=$bindir/template-revealjs.html\
-   --no-highlight -o output/slides.html $bindir/default.yaml $@
-
+pandoc -f markdown -t revealjs -i -V theme=night\
+ --template=$bindir/template-revealjs.html\
+ --no-highlight -o output/slides.html $@ $bindir/default.yaml
