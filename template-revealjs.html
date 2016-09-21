@@ -5,7 +5,7 @@
 
 <title>$title$</title>
 
-<meta name="description" content="$title$">    
+<meta name="description" content="$title$">
 
 $for(author)$
   <meta name="author" content="$author$" />
@@ -38,7 +38,7 @@ $endif$
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
 <script>
   document.write( '<link rel="stylesheet" href="$reveal-root$/css/print/' +
-    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) +
     '.css" type="text/css" media="print">' );
 </script>
 
@@ -90,7 +90,7 @@ $endfor$
 
 <div class="reveal">
 <header class="hleft">$logo$</header>
-<header class="hbottom">$author$ - $title$ - $date$ - $venue$</header>
+<header class="hbottom">$author$ - $title$ - $date$ - $venue$ - $git_rev$</header>
 
 <div id="light"></div>
 
@@ -104,7 +104,7 @@ $for(author)$<h3>$author$</h3>$endfor$
 <p>
 <h4>$date$</h4>
 </p>
-</section>  
+</section>
 
 $if(toc)$
 <section>
@@ -134,12 +134,12 @@ $body$
     parallaxBackgroundSize: '$bg-width$ $bg-height$',
     parallaxBackgroundHorizontal: $bg-horiz$,
     parallaxBackgroundVertical: $bg-vert$,
-	
+
   // available themes are in /css/theme
   $if(theme)$
-    theme: Reveal.getQueryHash().theme || '$theme$', 
+    theme: Reveal.getQueryHash().theme || '$theme$',
   $else$
-    theme: Reveal.getQueryHash().theme || 'default', 
+    theme: Reveal.getQueryHash().theme || 'default',
   $endif$
 
   // default/cube/page/concave/zoom/linear/fade/none
