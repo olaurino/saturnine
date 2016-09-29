@@ -7,6 +7,6 @@ fi
 
 mkdir -p output
 
-pandoc -f markdown -t revealjs -i -V theme=night -V\
+pandoc -f markdown -t revealjs -i -s -V theme=night -V\
   git_rev=$(git describe --tags) --template=$bindir/template-revealjs.html\
   --no-highlight -o output/slides.html $@ $bindir/default.yaml
