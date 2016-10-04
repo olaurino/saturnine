@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 
-<title>$title$</title>
+<title>$if(short-title)$$short-title$$else$$title$$endif$ - $date$ - $git_rev$</title>
 
 <meta name="description" content="$title$">
 
@@ -34,6 +34,11 @@ $endif$
 <!-- Local stylesheet -->
   <link rel="stylesheet" href="$css-root$/style-override.css">
   <link rel="stylesheet" href="style-override.css">
+
+$if(css)$
+  <link rel="stylesheet" href="../$css$">
+$endif$
+  
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
 <script>
@@ -90,7 +95,7 @@ $endfor$
 
 <div class="reveal">
 <header class="hleft">$logo$</header>
-<header class="hbottom">$author$ - $if(short-title)$$short-title$$else$$title$$endif$ - $date$ - $venue$ - $git_rev$</header>
+<header class="hbottom">$author$ - $if(short-title)$$short-title$$else$$title$$endif$ - $venue$ </header>
 
 <div id="light"></div>
 
