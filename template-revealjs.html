@@ -38,7 +38,7 @@ $endif$
 $if(css)$
   <link rel="stylesheet" href="../$css$">
 $endif$
-  
+
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
 <script>
@@ -75,6 +75,12 @@ document.onkeydown = function(evt) {
 
 	if (evt.keyCode==90) {
 		$$('#light').addClass('line').removeClass('circle');
+	}
+
+	if ($$('#light').is(":visible")) {
+		$$('.slides').css('cursor', 'none')
+	} else {
+		$$('.slides').css('cursor', 'default')
 	}
 };
 
