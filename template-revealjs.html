@@ -64,14 +64,15 @@ $$(document).mousemove(function(event) {
 
 document.onkeydown = function(evt) {
     evt = evt || window.event;
+
     if (evt.keyCode==65 || evt.keyCode==90) {
         $$('#light').toggle();
 		$$('#light').css('cursor', 'none');
     }
 
-	if (evt.keyCode==65) {
-		$$('#light').addClass('circle').removeClass('line');
-	}
+  if (evt.keyCode==65) {
+    $$('#light').addClass('circle').removeClass('line');
+  }
 
 	if (evt.keyCode==90) {
 		$$('#light').addClass('line').removeClass('circle');
@@ -82,6 +83,11 @@ document.onkeydown = function(evt) {
 	} else {
 		$$('.slides').css('cursor', 'default')
 	}
+
+  if (evt.keyCode==88) {
+    $$('#logo').toggle();
+  }
+
 };
 
 </script>
@@ -100,7 +106,7 @@ $for(include-before)$
 $endfor$
 
 <div class="reveal">
-<header class="hleft">$logo$</header>
+<header class="hleft"><div id="logo">$logo$</div></header>
 <header class="hbottom">$author$ - $if(short-title)$$short-title$$else$$title$$endif$ - $venue$ </header>
 
 <div id="light"></div>
